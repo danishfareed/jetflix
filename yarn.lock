@@ -4449,6 +4449,11 @@ dotenv@^10.0.0:
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-10.0.0.tgz#3d4227b8fb95f81096cdd2b66653fb2c7085ba81"
   integrity sha512-rlBi9d8jpv9Sf1klPjNfFAuWDjKLwTIJJ/VxtoTwIR6hnZxcEOQCZg2oIL3MWBYw5GpUDKOEnND7LXTbIpQ03Q==
 
+dotenv@^16.0.3:
+  version "16.0.3"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-16.0.3.tgz#115aec42bac5053db3c456db30cc243a5a836a07"
+  integrity sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==
+
 draht@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/draht/-/draht-1.0.1.tgz#c4c8879923d2130dfa9c5930e956c85d62b1e975"
@@ -9231,6 +9236,11 @@ slash@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-4.0.0.tgz#2422372176c4c6c5addb5e2ada885af984b396a7"
   integrity sha512-3dOsAHXXUkQTpOYcoAxLIorMTp4gIQr5IW3iVb7A7lFIp0VHhnynm9izx6TssdrIcVIESAlVjtnO2K8bg+Coew==
+
+smooth-scroll@^16.1.3:
+  version "16.1.3"
+  resolved "https://registry.yarnpkg.com/smooth-scroll/-/smooth-scroll-16.1.3.tgz#c5b68194b4186173f9f61065103ae4e26ce36885"
+  integrity sha512-ca9U+neJS/cbdScTBuUTCZvUWNF2EuMCk7oAx3ImdeRK5FPm+xRo9XsVHIkeEVkn7MBRx+ufVEhyveM4ZhaTGA==
 
 sockjs@^0.3.24:
   version "0.3.24"
