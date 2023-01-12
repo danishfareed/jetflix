@@ -7,9 +7,14 @@ const Navbar = () => {
   const {user, logOut} = UserAuth();
   const navigate = useNavigate();
 
-  const logout = async()=>{
-    await logOut();
-    navigate('/');
+  const handlelogout = async()=>{
+    try{
+      await logOut();
+      navigate('/');
+    }catch(error){
+      console.log(error)
+    }
+    
   }
 
   return (
@@ -20,7 +25,7 @@ const Navbar = () => {
       </Link>
       {user?.email ? <div>
           <Link to='/account'><button className='text-cyan-50 px-6 py-2'>Account</button></Link>
-          <button onClick={logout} className='bg-cyan-300 px-6 py-2'>Logout</button>
+          <button onClick={handlelogout} className='bg-cyan-300 px-6 py-2'>Logout</button>
         </div> : <div>
           <Link to='/login'><button className='text-cyan-50 px-6 py-2'>Signin</button></Link>
           <Link to='/signup'><button className='bg-cyan-300 px-6 py-2'>Signup</button></Link>

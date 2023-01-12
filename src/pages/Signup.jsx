@@ -7,15 +7,31 @@ const Signup = () => {
     const {user, signUp} = UserAuth();
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [emailError, setEmailError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
     const [error, setError] = useState('')
     const navigate = useNavigate();
 
     const handleSubmit = async (e) =>{
-        e.preventDefault()
+        e.preventDefault();
+        let emailError = '';
+        let passwordError = '';
+        if (!validateEmail(email)) {
+            emailError = 'Invalid email address';
+          }
+          if (password.length < 8) {
+            passwordError = 'Password must be at least 8 characters long';
+          }
+          if (emailError || passwordError) {
+            setEmailError(emailError);
+            setPasswordError(passwordError);
+            return;
+          }
         try{
             await signUp(email, password);
             navigate('/');
         } catch(error){
+            setError(error.message);
             console.error(error);
         }
     }
@@ -42,6 +58,7 @@ const Signup = () => {
                   placeholder='Email'
                   autoComplete='email'
                 />
+                {emailError && <span className='p-3 bg-red-400 my-2'>{emailError}</span>}
                 <input
                   onChange={(e) => setPassword(e.target.value)}
                   className='p-3 my-2 bg-gray-700 rouded'
@@ -49,6 +66,7 @@ const Signup = () => {
                   placeholder='Password'
                   autoComplete='current-password'
                 />
+                {passwordError && <span className='p-3 bg-red-400 my-2'>{passwordError}</span>}
                 <button className='bg-cyan-600 py-3 my-6 rounded font-bold'>
                   Sign Up
                 </button>
@@ -71,4 +89,9 @@ const Signup = () => {
       );
 }
 
+function validateEmail(email) {
+    // Regular expression for email validation
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
 export default Signup;
