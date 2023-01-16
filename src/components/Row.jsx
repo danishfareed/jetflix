@@ -6,15 +6,7 @@ import {MdChevronLeft, MdChevronRight} from 'react-icons/md'
 
 const Row = ({rowID, title, fetchURL}) => {
   const ref = React.useRef(null);
-//     const [moviesList, setMoviesList] = useState([]);
 
-//     useEffect(() => {
-//       axios.get(fetchURL).then((response)=>{
-//         setMoviesList(response.data.results);
-//       })
-//     }, [fetchURL])
-    
-//   console.log(moviesList)
     
   const {data: getMoviesList, isSuccess: isMoviesListSuccess } = useQuery(
     ['getMoviesList', fetchURL], 
